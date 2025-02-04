@@ -1,9 +1,11 @@
-let angle = 0;
+let angle = 0;  // initial angle
+const line = document.getElementById('line');  // get the line element
 
+// function to update the rotation angle and rotate the line
 function rotateLine() {
-  angle += 2; // Increase by 2 degrees
-  if (angle >= 360) angle = 0; // Reset after a full rotation
-  document.getElementById('line').style.transform = `translate(-50%, -50%) rotate(${angle}deg)`; // Apply rotation
+  angle += 2;  // increase the angle by 2 degrees
+  line.style.transform = `rotate(${angle}deg)`;  // rotate the line
 }
 
-setInterval(rotateLine, 20); // Run every 20ms
+// call the rotateLine function every 20 milliseconds
+setInterval(rotateLine, 20);
